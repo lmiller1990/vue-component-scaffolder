@@ -1,9 +1,9 @@
 {
-  "name": "vue-component-gen",
-  "version": "1.0.0",
-  "description": "A tool to scaffold Vue components",
+  "name": "vue-component-scaffold",
+  "version": "0.1.0",
+  "description": "A cli tool to scaffold Vue components",
   "scripts": {
-    "test":  "mocha -R spec"
+    "test": "mocha -R spec"
   },
   "preferGlobal": true,
   "author": "",
