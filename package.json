@@ -1,0 +1,17 @@
+{
+  "name": "vue-component-gen",
+  "version": "1.0.0",
+  "description": "A tool to scaffold Vue components",
+  "scripts": {
+    "test":  "mocha -R spec"
+  },
+  "preferGlobal": true,
+  "author": "",
+  "bin": {
+    "vc": "index.js"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^4.0.2"
+  }
+}
