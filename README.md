@@ -1,5 +1,13 @@
 A npm based cli tool to generate vue components.
 
+#### Installation
+
+`npm install -g vc` // currently not on registry. Soon.
+
+For now...
+
+clone the repo, and run `npm link` in the root folder.
+
 #### Use
 
 `vc Scrollbar`
