@@ -2,20 +2,20 @@ const expect = require('chai').expect
 const utils  = require('../utils')
 
 describe('getFilename()', () => {
-  it('should extract from a path including a directory', () => {
+  it('should extract name including extension from a path including a directory', () => {
     const args = 'test/test.vue'
 
     const path = utils.getFilename(args)
 
-    expect(path).to.equal('test')
+    expect(path).to.equal('test.vue')
   })
 
-  it('should extract from a path including multi level directory', () => {
+  it('should extract name including extension from a path including multi level directory', () => {
     const args = 'test/nested/test.vue'
 
     const path = utils.getFilename(args)
 
-    expect(path).to.equal('test')
+    expect(path).to.equal('test.vue')
   })
 
   it('should extract from a path which is a filename only', () => {
@@ -23,7 +23,7 @@ describe('getFilename()', () => {
 
     const path = utils.getFilename(args)
 
-    expect(path).to.equal('test')
+    expect(path).to.equal('test.vue')
   })
 })
 

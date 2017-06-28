@@ -1,6 +1,6 @@
 const getFilename = (arg) => {
   const arr = arg.split('/')
-  return arr[arr.length - 1].split('.')[0]
+  return arr[arr.length - 1]
 }
 
 const template = (name) => {
