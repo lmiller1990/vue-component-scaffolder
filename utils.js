@@ -3,6 +3,10 @@ const getFilename = (arg) => {
   return arr[arr.length - 1]
 }
 
+const removeExtension = (name) => {
+  return name.split('.')[0]
+}
+
 const template = (name) => {
   const t = 
 `<template>
@@ -23,3 +27,4 @@ const template = (name) => {
 }
 exports.getFilename = getFilename
 exports.template = template
+exports.removeExtension = removeExtension

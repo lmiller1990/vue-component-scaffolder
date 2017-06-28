@@ -1,6 +1,24 @@
 const expect = require('chai').expect
 const utils  = require('../utils')
 
+describe('removeExtension()', () => {
+  it('removes the extension from a file with an extension', () => {
+    const withExt = 'test.vue'
+
+    const without = utils.removeExtension(withExt)
+
+    expect(without).to.equal('test')
+  })
+
+  it('removes the extension from a file without an extension', () => {
+    const withExt = 'test'
+
+    const without = utils.removeExtension(withExt)
+
+    expect(without).to.equal('test')
+  })
+})
+
 describe('getFilename()', () => {
   it('should extract name including extension from a path including a directory', () => {
     const args = 'test/test.vue'
@@ -43,7 +61,8 @@ describe('template()', () => {
 
 <style scoped>
 </style>`
-    const result = utils.template('Test')
+    const name = utils.removeExtension('Test.vue')
+    const result = utils.template(name)
 
     expect(result).to.equal(expectedTemplate)
   })

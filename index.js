@@ -7,7 +7,8 @@ const path  = process.argv.slice(2)[0]
 const child = exec('touch ' + path, (err, stdout, stderr) => {
   if (err) console.log(err)
   const name = utils.getFilename(path)
-  fs.writeFile(path, utils.template(name), (err) => {
+  const nameWithoutExt = utils.removeExtension(name)
+  fs.writeFile(path, utils.template(nameWithoutExt), (err) => {
     if (err) console.log(err)
   })
 })
