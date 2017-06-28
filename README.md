@@ -6,7 +6,7 @@ A npm based cli tool to generate vue components.
 
 #### Use
 
-`vc Scrollbar`
+`vc Scrollbar.vue`
 
 will generate the following:
 
