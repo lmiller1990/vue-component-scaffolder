@@ -1,6 +1,27 @@
 const expect = require('chai').expect
 const utils  = require('../utils')
 
+describe('getApiMethods', () => {
+  it('should get and format the api methods after the dataOptions flag', () => {
+    const args = 'test/test.vue --options props created watch'
+
+    const getOptions = utils.getOptionsByName('data,created,watch')
+
+    expect(getOptions).to.equal(
+`data () {
+  return {
+  }
+},
+
+created () {
+},
+
+watch: {
+}`
+    )
+  })
+})
+
 describe('removeExtension()', () => {
   it('removes the extension from a file with an extension', () => {
     const withExt = 'test.vue'
@@ -64,6 +85,35 @@ describe('template()', () => {
     const name = utils.removeExtension('Test.vue')
     const result = utils.template(name)
 
+    expect(result).to.equal(expectedTemplate)
+  })
+
+  it('generates the correct template with name and options', () => {
+    const expectedTemplate = 
+`<template>
+  <div>
+  </div>
+</template>
+
+<script>
+  export default {
+    name: 'Test',
+
+    props: {
+    },
+    
+    data () {
+      return {
+      }
+    }
+  }
+</script>
+
+<style scoped>
+</style>`
+    const name = utils.removeExtension('Test.vue')
+    const options = utils.getOptionsByName('props,data')
+    const result = utils.template(name, options)
     expect(result).to.equal(expectedTemplate)
   })
 })

@@ -13,5 +13,8 @@
   "license": "MIT",
   "devDependencies": {
     "chai": "^4.0.2"
+  },
+  "dependencies": {
+    "minimist": "^1.2.0"
   }
 }

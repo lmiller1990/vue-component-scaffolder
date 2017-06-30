@@ -1,13 +1,41 @@
+const api = require('./vueApi')
+
 const getFilename = (arg) => {
   const arr = arg.split('/')
   return arr[arr.length - 1]
+}
+
+const getOptionsByName = (options) => {
+  const opts = options.split(',')
+  let allOptions = ''
+  for (let o in opts) {
+    allOptions = allOptions.concat(api[opts[o]] + ',\n\n') 
+  }
+
+  return allOptions.substring(0, allOptions.length - 3) // remove hanging comma
 }
 
 const removeExtension = (name) => {
   return name.split('.')[0]
 }
 
-const template = (name) => {
+const addPadding = (lines, spaces) => {
+  const lineByLine = lines.split('\n')
+  console.log('ok')
+  console.log(lineByLine)
+  let running = ''
+  for (let l in lineByLine) {
+    running = running.concat(new Array(spaces).join(' ') + lineByLine[l]).trimRight()
+    if (l < lineByLine.length - 1) 
+      running += '\n'
+  }
+
+  return running
+}
+
+const template = (name, options) => {
+  if (options) {
+  }
   const t = 
 `<template>
   <div>
@@ -16,7 +44,7 @@ const template = (name) => {
 
 <script>
   export default {
-    name: '${name}'
+    name: '${name}'${options !== undefined ? ',\n\n' + (addPadding(options, 5)) : ''}
   }
 </script>
 
@@ -28,3 +56,4 @@ const template = (name) => {
 exports.getFilename = getFilename
 exports.template = template
 exports.removeExtension = removeExtension
+exports.getOptionsByName = getOptionsByName
