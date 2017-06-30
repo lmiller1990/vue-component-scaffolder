@@ -101,7 +101,7 @@ describe('template()', () => {
 
     props: {
     },
-    
+     
     data () {
       return {
       }

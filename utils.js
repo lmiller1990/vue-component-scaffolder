@@ -21,21 +21,22 @@ const removeExtension = (name) => {
 
 const addPadding = (lines, spaces) => {
   const lineByLine = lines.split('\n')
-  console.log('ok')
-  console.log(lineByLine)
   let running = ''
+
   for (let l in lineByLine) {
-    running = running.concat(new Array(spaces).join(' ') + lineByLine[l]).trimRight()
-    if (l < lineByLine.length - 1) 
+    running = running.concat(new Array(spaces).join(' ') + lineByLine[l]) 
+    console.log(lineByLine.length - 1, l)
+    if (parseInt(l) === lineByLine.length - 1) {
+      // nothing
+    } else {
       running += '\n'
+    }
   }
 
   return running
 }
 
 const template = (name, options) => {
-  if (options) {
-  }
   const t = 
 `<template>
   <div>
