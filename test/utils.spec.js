@@ -118,4 +118,25 @@ describe('template()', () => {
     const result = utils.template(name, options)
     expect(result).to.equalIgnoreSpaces(expectedTemplate)
   })
+
+  it('generates the correct template for incorrect lifecycle args', () => {
+    const expectedTemplate = 
+`<template>
+  <div>
+  </div>
+</template>
+
+<script>
+  export default {
+    name: 'Test'
+  }
+</script>
+
+<style scoped>
+</style>`
+    const name = utils.removeExtension('Test.vue')
+    const options = utils.getOptionsByName('incorrect,bad')
+    const result = utils.template(name, options)
+    expect(result).to.equalIgnoreSpaces(expectedTemplate)
+  })
 })

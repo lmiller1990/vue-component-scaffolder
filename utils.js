@@ -9,7 +9,10 @@ const getOptionsByName = (options) => {
   const opts = options.split(',')
   let allOptions = ''
   for (let o in opts) {
-    allOptions = allOptions.concat(api[opts[o]] + ',\n\n') 
+    let apiMethod = api[opts[o]] 
+    if (apiMethod !== undefined) {
+      allOptions = allOptions.concat(apiMethod + ',\n\n') 
+    } 
   }
 
   return allOptions.substring(0, allOptions.length - 3) // remove hanging comma
@@ -36,6 +39,9 @@ const addPadding = (lines, spaces) => {
 }
 
 const template = (name, options) => {
+  if (options !== undefined) {
+    options = options.length === 0 ? undefined : options
+  }
   const t = 
 `<template>
   <div>
