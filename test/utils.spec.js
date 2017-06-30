@@ -1,4 +1,6 @@
-const expect = require('chai').expect
+const chai = require('chai')
+const expect = chai.expect
+chai.use(require('chai-string'))
 const utils  = require('../utils')
 
 describe('getApiMethods', () => {
@@ -114,6 +116,6 @@ describe('template()', () => {
     const name = utils.removeExtension('Test.vue')
     const options = utils.getOptionsByName('props,data')
     const result = utils.template(name, options)
-    expect(result).to.equal(expectedTemplate)
+    expect(result).to.equalIgnoreSpaces(expectedTemplate)
   })
 })

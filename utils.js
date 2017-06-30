@@ -25,7 +25,6 @@ const addPadding = (lines, spaces) => {
 
   for (let l in lineByLine) {
     running = running.concat(new Array(spaces).join(' ') + lineByLine[l]) 
-    console.log(lineByLine.length - 1, l)
     if (parseInt(l) === lineByLine.length - 1) {
       // nothing
     } else {
