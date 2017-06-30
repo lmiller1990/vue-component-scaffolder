@@ -7,10 +7,13 @@
   export default {
     name: 'MyTest',
 
+    props: {
+    },
+    
     created () {
     },
     
-    updated () {
+    mounted () {
     }
   }
 </script>

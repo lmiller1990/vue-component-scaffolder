@@ -17,15 +17,42 @@ will generate the following:
 </template>
 
 <script>
-export default {
-  name: 'Scrollbar'
-}
+  export default {
+    name: 'Scrollbar'
+  }
 </script>
 
 <style scoped>
 </style>
 ```
 
-More args to come!
+#### options
 
-To develop: run the tests with `npm run test`. Adding new features? Add a test and make a PR.
+Using the `--options` argument, you can have lifecycle options and dta options. For example `MyTest.vue --options props,created,mounted`  will produce the following:
+
+``` js
+<template>
+  <div>
+  </div>
+</template>
+
+<script>
+  export default {
+    name: 'MyTest',
+
+    props: {
+    },
+
+    created () {
+    },
+
+    mounted () {
+    }
+  }
+</script>
+
+<style scoped>
+</style>
+```
+
+To develop: run the tests with `npm run test`. Adding new features? Add a test and make a PR. Or an issue and I'll add it.
