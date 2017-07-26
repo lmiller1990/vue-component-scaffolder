@@ -17,5 +17,6 @@
   "dependencies": {
     "chai-string": "^1.4.0",
     "minimist": "^1.2.0"
-  }
+  },
+  "homepage": "https://github.com/lmiller1990/vue-component-scaffolder"
 }
