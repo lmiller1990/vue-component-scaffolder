@@ -30,7 +30,7 @@ will generate the following:
 
 Using the `--options` argument, you can have lifecycle options and dta options. For example `MyTest.vue --options props,created,mounted`  will produce the following:
 
-``` js
+```
 <template>
   <div>
   </div>
