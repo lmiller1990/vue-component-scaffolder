@@ -1,7 +1,11 @@
 {
   "name": "vue-component-scaffold",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "A cli tool to scaffold Vue components",
+  "keywords": [ 
+    "vue"
+  ],
+  "author": "Lachlan Miller",
   "scripts": {
     "test": "mocha -R spec"
   },
@@ -18,5 +22,9 @@
     "chai-string": "^1.4.0",
     "minimist": "^1.2.0"
   },
-  "homepage": "https://github.com/lmiller1990/vue-component-scaffolder"
+  "homepage": "https://github.com/lmiller1990/vue-component-scaffolder",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lmiller1990/vue-component-scaffolder.git"
+  }
 }
