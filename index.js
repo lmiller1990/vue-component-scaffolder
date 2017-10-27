@@ -11,6 +11,7 @@ const child = exec('touch ' + path, (err, stdout, stderr) => {
   let options
   let name
   let nameWithoutExt
+
   console.log('args', argv)
   name = utils.getFilename(path)
   if (argv.options)
@@ -21,6 +22,11 @@ const child = exec('touch ' + path, (err, stdout, stderr) => {
 
   nameWithoutExt = utils.removeExtension(name)
   
+  options = argv.options !== undefined
+  ? utils.getOptionsByName(argv.options) 
+  : undefined
+  
+  nameWithoutExt = utils.removeExtension(name)
 
   fs.writeFile(path, utils.template(nameWithoutExt, options), (err) => {
     if (err) console.log(err)
