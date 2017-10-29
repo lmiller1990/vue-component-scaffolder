@@ -3,6 +3,12 @@ const expect = chai.expect
 chai.use(require('chai-string'))
 const utils  = require('../utils')
 
+describe('generateTest', () => {
+  it('generates a test', () => {
+
+  })
+})
+
 describe('getApiMethods', () => {
   it('should get and format the api methods after the dataOptions flag', () => {
     const args = 'test/test.vue --options props created watch'

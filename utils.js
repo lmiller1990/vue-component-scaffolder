@@ -1,5 +1,9 @@
 const api = require('./vueApi')
 
+const generateTest = componentName => {
+  // TODO: Generate test 
+}
+
 const getFilename = (arg) => {
   const arr = arg.split('/')
   return arr[arr.length - 1]
