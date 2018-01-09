@@ -1,16 +1,16 @@
 A npm based cli tool to generate vue components.
 
-#### Installation
+### Installation
 
 `npm install -g vue-component-scaffold` 
 
-#### Use
+### Minimal Example
 
 `vc Scrollbar`
 
-will generate the following:
+will generate the `Scrollbar.vue` with the following:
 
-```
+```html
 <template>
   <div>
   </div>
@@ -26,7 +26,7 @@ will generate the following:
 </style>
 ```
 
-#### options
+### Passing Vue API options
 
 Using the `--options` argument, you can have lifecycle options and dta options. For example `vc MyTest --options=props,created,mounted`  will produce the following:
 
@@ -55,11 +55,11 @@ Using the `--options` argument, you can have lifecycle options and dta options. 
 </style>
 ```
 
-#### test
+### Generating a Test
 
 Passing the `-t` argument will generate a test (assumes you are using [`vue-test-utils`](https://github.com/vuejs/vue-test-utils), the official library for testing Vue components).
 
-`vc MyComponent -t` will generate:
+`vc MyComponent -t` will generate `MyComponent.test.js`, with:
 
 ```js
 import { shallow } from 'vue-test-utils'
