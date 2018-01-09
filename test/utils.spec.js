@@ -146,3 +146,22 @@ describe('template()', () => {
     expect(result).to.equalIgnoreSpaces(expectedTemplate)
   })
 })
+
+describe('testTemplate()', () => {
+  it('generates the correct test template with name', () => {
+    const expectedTemplate = 
+`import { shallow } from 'vue-test-utils'
+import Foo from './Foo'
+
+describe(Foo, () => {
+  it('renders', () => {
+    const wrapper = shallow(Foo)
+  })
+})`
+    const name = utils.removeExtension('Foo.vue')
+    const result = utils.testTemplate(name)
+
+    expect(result).to.equal(expectedTemplate)
+  })
+})
+

@@ -2,15 +2,14 @@
   "name": "vue-component-scaffold",
   "version": "0.1.5",
   "description": "A cli tool to scaffold Vue components",
-  "keywords": [ 
+  "keywords": [
     "vue"
   ],
-  "author": "Lachlan Miller",
+  "author": "",
   "scripts": {
     "test": "mocha -R spec"
   },
   "preferGlobal": true,
-  "author": "",
   "bin": {
     "vc": "index.js"
   },

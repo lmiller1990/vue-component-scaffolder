@@ -63,7 +63,23 @@ const template = (name, options) => {
 
   return t
 }
+
+const testTemplate = name => {
+  const t =
+`import { shallow } from 'vue-test-utils'
+import ${name} from './${name}'
+
+describe(${name}, () => {
+  it('renders', () => {
+    const wrapper = shallow(${name})
+  })
+})`
+
+  return t
+}
+
 exports.getFilename = getFilename
 exports.template = template
+exports.testTemplate = testTemplate
 exports.removeExtension = removeExtension
 exports.getOptionsByName = getOptionsByName
