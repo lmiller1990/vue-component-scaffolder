@@ -150,7 +150,7 @@ describe('template()', () => {
 describe('testTemplate()', () => {
   it('generates the correct test template with name', () => {
     const expectedTemplate = 
-`import { shallow } from 'vue-test-utils'
+`import { shallow } from '@vue/test-utils'
 import Foo from './Foo'
 
 describe(Foo, () => {

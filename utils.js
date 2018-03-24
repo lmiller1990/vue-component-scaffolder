@@ -66,7 +66,7 @@ const template = (name, options) => {
 
 const testTemplate = name => {
   const t =
-`import { shallow } from 'vue-test-utils'
+`import { shallow } from '@vue/test-utils'
 import ${name} from './${name}'
 
 describe(${name}, () => {
